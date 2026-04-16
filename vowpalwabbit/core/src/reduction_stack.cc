@@ -21,6 +21,7 @@
 #include "vw/core/reductions/bfgs.h"
 #include "vw/core/reductions/binary.h"
 #include "vw/core/reductions/boosting.h"
+#include "vw/core/reductions/bpr.h"
 #include "vw/core/reductions/bs.h"
 #include "vw/core/reductions/cats.h"
 #include "vw/core/reductions/cats_pdf.h"
@@ -185,6 +186,10 @@ void prepare_reductions(std::vector<std::tuple<std::string, VW::reduction_setup_
   reductions.push_back(VW::reductions::lda_setup);
 #endif
   reductions.push_back(VW::reductions::cbzo_setup);
+
+  // BPR: multiline reduction for pairwise ranking, placed after all
+  // singleline reductions (scorer, lrq, etc.) so it wraps them correctly.
+  reductions.push_back(VW::reductions::bpr_setup);
 
   // Reductions
   reductions.push_back(VW::reductions::bs_setup);

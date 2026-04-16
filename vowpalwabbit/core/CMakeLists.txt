@@ -92,6 +92,7 @@ set(vw_core_headers
   include/vw/core/reductions/bfgs.h
   include/vw/core/reductions/binary.h
   include/vw/core/reductions/boosting.h
+  include/vw/core/reductions/bpr.h
   include/vw/core/reductions/bs.h
   include/vw/core/reductions/cats_pdf.h
   include/vw/core/reductions/cats_tree.h
@@ -246,6 +247,7 @@ set(vw_core_sources
   src/reductions/bfgs.cc
   src/reductions/binary.cc
   src/reductions/boosting.cc
+  src/reductions/bpr.cc
   src/reductions/bs.cc
   src/reductions/cats_pdf.cc
   src/reductions/cats_tree.cc
